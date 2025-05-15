@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 function getUserLocation(){
     fetch('http://api.ipstack.com/172.70.110.48?access_key=4e4a77d176849dca950e8d6773f15b58')
     .then((result) => result.json())

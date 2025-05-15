@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Header: React.FC = () => {
+const Footer: React.FC = () => {
     return (
         <div className = "header">
             <h1>WhereToWaste</h1>
@@ -9,4 +10,4 @@ const Header: React.FC = () => {
     );
  }
 
- export default Header;
+ export default Footer;

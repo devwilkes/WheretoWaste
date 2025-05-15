@@ -1,2 +1,22 @@
 /* Importing Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap");
+
+/* Global Styles */
+header {
+  background-color: #ffc824;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  margin: 20px 0;
+}
+
+footer {
+  background-color: #ffc824;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  bottom: 0;
+}
