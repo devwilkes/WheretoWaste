@@ -72,7 +72,7 @@ button:focus-visible {
 }
 
 /* Global Styles */
-header {
+:header {
   background-color: #ffc824;
   padding: 20px;
   display: flex;
@@ -80,13 +80,13 @@ header {
   align-items: center;
 }
 
-nav {
+:nav {
   margin: 20px 0;
   display: flex;
   justify-content: center;
 }
 
-footer {
+:footer {
   background-color: #ffc824;
   color: #ffffff;
   text-align: center;
