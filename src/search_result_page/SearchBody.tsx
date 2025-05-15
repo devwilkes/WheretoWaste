@@ -1,11 +1,5 @@
 import React from 'react';
 
-function produceResults(){
-    
-
-
-}
-
 const SearchBody: React.FC = () => {
     return (
         <div className = "searchResults">
@@ -14,3 +8,5 @@ const SearchBody: React.FC = () => {
         </div>
     )
 }
+
+export default SearchBody;
