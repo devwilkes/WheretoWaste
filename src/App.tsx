@@ -2,7 +2,8 @@ import React from "react";
 import Header from "./Header";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import "./App.css";
+import Home from "./home_page/HomeBody";
+import HomeBody from "./home_page/HomeBody";
 
 // Define the App component that renders the Header, Nav, and Footer components
 const App: React.FC = () => {
@@ -10,7 +11,7 @@ const App: React.FC = () => {
     <>
       <Header />
       <Nav />
-      
+      <HomeBody />
       <Footer />
     </>
   );
