@@ -10,7 +10,7 @@ import About from "./about_page/AboutBody";
 import Help from "./help_page/HelpBody";
 
 
-function Nav() {
+const Nav: React.FC = () => {
     return (
         <>
             <Router>
