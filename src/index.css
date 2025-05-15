@@ -29,7 +29,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: stretch;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -72,7 +73,7 @@ button:focus-visible {
 }
 
 /* Global Styles */
-:header {
+header {
   background-color: #ffc824;
   padding: 20px;
   display: flex;
@@ -80,13 +81,13 @@ button:focus-visible {
   align-items: center;
 }
 
-:nav {
+nav {
   margin: 20px 0;
   display: flex;
   justify-content: center;
 }
 
-:footer {
+footer {
   background-color: #ffc824;
   color: #ffffff;
   text-align: center;
