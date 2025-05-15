@@ -13,18 +13,19 @@ import React from 'react';
     })
 }
     
-
-function search(){
-    const searchForm = document.getElementById("searchForm");
-    const searchInput = searchForm?.getAttribute("userInput");
+*/
+function search(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const userInput = formData.get("userInput");
+    console.log(userInput);
 }
-    */
 
 const HomeBody: React.FC = () => {
     return (
         <div className = "SearchBody">
             <h1>What are you looking to dispose of?</h1>
-            <form id = "searchForm" action = "/search" method = "get">
+            <form id = "searchForm" method = "get" onSubmit={search}>
                 <input type = "text" name = "userInput" placeholder = "Enter waste type..." required />
                 <button type = "submit">Search</button> 
             </form>
