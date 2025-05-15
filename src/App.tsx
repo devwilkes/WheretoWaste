@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <>
       <Header />
       <Nav />
+      
       <Footer />
     </>
   );

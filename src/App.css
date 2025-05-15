@@ -5,11 +5,15 @@
 header {
   background-color: #ffc824;
   padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
   margin: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 footer {
@@ -17,6 +21,9 @@ footer {
   color: #ffffff;
   text-align: center;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   bottom: 0;
 }
