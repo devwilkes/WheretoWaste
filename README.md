@@ -15,4 +15,4 @@ By educating and informing users of my website on how/where to dispose of otherw
 WheretoWaste is designed to be accessible by web browser users (Edge, Chrome, Firefox, etc.), but can also be accessible to mobile browser users on iOS devices. Later down the line, I do want to try implementing WheretoWaste as a mobile application using Swift.
 
 # WheretoWaste Developer Manual
-docs/Developer Manual
+[Link to the Developer Manual](https://github.com/devwilkes/WheretoWaste/blob/d8efa688ba19282f605b00915c1b2fc4fe05fadc/docs/Developer%20Manual)
