@@ -1,5 +1,9 @@
 import React from 'react';
 
+function generateSuggestions() {
+    
+}
+
 const SearchBody: React.FC = () => {
     return (
         <div className = "searchResults">
