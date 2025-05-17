@@ -1,10 +1,12 @@
-# How to Install WheretoWaste 
+#WheretoWaste Developer Manual
 
-# How to run WheretoWaste in a server
+## How to Install WheretoWaste 
 
-# WheretoWaste Server APIs
+## How to run WheretoWaste in a server
 
-# Known Bugs and Errors
+## WheretoWaste Server APIs
 
-# Future Developments
+## Known Bugs and Errors
+
+## Future Developments
 
