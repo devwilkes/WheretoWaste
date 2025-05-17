@@ -1,17 +1,29 @@
 import React from "react";
 import "./App.css";
-import Header from "./Header";
-import HomeBody from "./home_page/HomeBody";
-import Footer from "./Footer";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+  } from "react-router-dom";
+import Header from "./components/Header";
+import HomeBody from "./pages/HomeBody";
+import AboutBody from "./pages/AboutBody";
+import HelpBody from "./pages/HelpBody";
+import Footer from "./Footer";    
 
-// Define the App component that renders the Header, Nav, and Footer components
+// Define the App component that renders the Header, Routes, and Footer components
 const App: React.FC = () => {
   return (
-    <div className = "App">
-    <Header />
-    <HomeBody />
-    <Footer />
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<HomeBody />} />
+        <Route path="/about" element={<AboutBody />} />
+        <Route path="/help" element={<HelpBody />} />
+        </Routes>
+    </Router>
   );
 };
 
