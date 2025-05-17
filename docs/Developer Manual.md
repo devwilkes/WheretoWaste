@@ -1,4 +1,4 @@
-#WheretoWaste Developer Manual
+# WheretoWaste Developer Manual
 
 ## How to Install WheretoWaste 
 
