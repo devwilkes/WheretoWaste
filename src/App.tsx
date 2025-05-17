@@ -10,20 +10,25 @@ import Header from "./components/Header";
 import HomeBody from "./pages/HomeBody";
 import AboutBody from "./pages/AboutBody";
 import HelpBody from "./pages/HelpBody";
-import Footer from "./Footer";    
+import Footer from "./components/Footer";    
 
 // Define the App component that renders the Header, Routes, and Footer components
 const App: React.FC = () => {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<HomeBody />} />
-        <Route path="/about" element={<AboutBody />} />
-        <Route path="/help" element={<HelpBody />} />
-        </Routes>
-    </Router>
+    <div className="app-container" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <Router>
+        <Header />
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<HomeBody />} />
+            <Route path="/about" element={<AboutBody />} />
+            <Route path="/help" element={<HelpBody />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </div>
   );
 };
 
