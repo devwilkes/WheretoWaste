@@ -1,14 +1,12 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import './header.css';
 
 
 function NavBar() {
   return (
     <nav className='navbar'>
       <div className='navbar-left'>
-        <NavLink to='/' className='logo'>
-          WheretoWaste
-        </NavLink>
       </div>
       <div className='navbar-center'>
         <ul className='nav-links'>

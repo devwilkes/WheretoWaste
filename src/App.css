@@ -1,29 +1,6 @@
-/* Importing Google Fonts */
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap");
-
-/* Global Styles */
-header {
-  background-color: #ffc824;
-  padding: 20px;
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-nav {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-footer {
-  background-color: #ffc824;
-  color: #ffffff;
-  text-align: center;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  bottom: 0;
+  vertical-align: middle;
 }

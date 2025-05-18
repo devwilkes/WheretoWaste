@@ -1,0 +1,52 @@
+.textbox {
+  border: 1px solid #f3f3f3;
+  height: 2rem;
+  box-sizing: border-box;
+  padding: 1px 10px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+.textbox:focus {
+  transition: 0.2s ease-in-out;
+  border: 1px solid rgb(0, 202, 61);
+}
+
+.container {
+  width: 30rem;
+  position: relative;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.textbox {
+  border: 1px solid #f3f3f3;
+  height: 2rem;
+  outline: none;
+  box-sizing: border-box;
+  padding: 1px 10px;
+  transition: 0.2s ease-in-out;
+  width: 100%;
+}
+
+.textbox:focus {
+  border: 1px solid rgb(0, 255, 89);
+  transition: 0.2s ease-in-out;
+}
+
+.searchButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 3rem;
+  background-color: #35ff4d;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
