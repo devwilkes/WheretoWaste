@@ -3,38 +3,14 @@ import './HelpStyle.css';
 import { useState, useEffect } from 'react';
 import supabase from '../server-backend/supabase';
 
-function Page() {
-  const [todos, setTodos] = useState([])
 
-  useEffect(() => {
-    function getTodos() {
-      const { data: todos } = await supabase.from('todos').select()
-
-      if (todos.length > 1) {
-        setTodos(todos)
-      }
-    }
-
-    getTodos()
-  }, [])
-
-  return (
-    <div>
-      {todos.map((todo) => (
-        <li key={todo}>{todo}</li>
-      ))}
-    </div>
-  )
-}
-
-
-async function createContactSheet() {
-  await fetch(`/contacts`, {
+async function createCommentSheet() {
+  await fetch(`/contact`, {
     method: 'POST',
     body: JSON.stringify({
-      name: `${document.getElementById('userName').value}`,
-      email: `${document.getElementById('userEmail').value}`,
-      message: `${document.getElementById('userMessage').value}`,
+      name: `${(document.getElementById('userName') as HTMLInputElement | null)?.value ?? ''}`,
+      email: `${(document.getElementById('userEmail') as HTMLInputElement | null)?.value ?? ''}`,
+      message: `${(document.getElementById('userMessage') as HTMLTextAreaElement | null)?.value ?? ''}`,
     }),
     headers: {
       'content-type': 'application/json',
@@ -49,7 +25,7 @@ async function loadContactData() {
     .then((result) => result.json())
     .then((resultJson) => {
       const table = document.createElement('table');
-      table.setAttribute('id', 'customerInfo');
+      table.setAttribute('id', 'contactInfo');
 
       const tableRow = document.createElement('tr');
 
@@ -67,24 +43,21 @@ async function loadContactData() {
 
       table.appendChild(tableRow);
 
-      resultJson.forEach((customer) => {
+      resultJson.forEach((contact: { contact_name: string; contact_message: string; }) => {
         const customerTableRow = document.createElement('tr');
-        const customerTableFirstName = document.createElement('td');
-        const customerTableLastName = document.createElement('td');
-        const customerTableState = document.createElement('td');
+        const contactTableName = document.createElement('td');
+        const contactTableMessage = document.createElement('td');
 
-        customerTableFirstName.innerHTML = customer.customer_first_name;
-        customerTableLastName.innerHTML = customer.customer_last_name;
-        customerTableState.innerHTML = customer.customer_state;
+        contactTableName.innerHTML = contact.contact_name;
+        contactTableMessage.innerHTML = contact.contact_message;
 
-        customerTableRow.appendChild(customerTableFirstName);
-        customerTableRow.appendChild(customerTableLastName);
-        customerTableRow.appendChild(customerTableState);
+        customerTableRow.appendChild(contactTableName);
+        customerTableRow.appendChild(contactTableMessage);
 
         table.appendChild(customerTableRow);
       });
 
-      const preExistingTable = document.getElementById('customerInfo');
+      const preExistingTable = document.getElementById('contactInfo');
       if (preExistingTable) {
         preExistingTable.remove();
       }
@@ -96,6 +69,20 @@ async function loadContactData() {
 window.onload = loadContactData;
 
 const HelpBody: React.FC = () => {
+    const [todos, setTodos] = useState<any[]>([])
+
+  useEffect(() => {
+    async function getTodos() {
+      const { data: todos } = await supabase.from('todos').select()
+
+      if (todos && todos.length > 1) {
+        setTodos(todos)
+      }
+    }
+
+    getTodos()
+  }, [])
+
     return (<>
         <div className = "FAQ">
             <h1>FAQ</h1>
@@ -120,11 +107,18 @@ const HelpBody: React.FC = () => {
         <div className = "contact">
             <h1>Got other questions? Contact me!</h1>
             <p>For any questions, comments, or concerns regarding WheretoWaste, please fill out the form below:</p>
-            <form id = "contactForm" method = "get">
-                <input type = "text" name = "userName" placeholder = "Enter your name..." required />
-                <input type = "email" name = "userEmail" placeholder = "Enter your email..." required />
-                <textarea name = "userMessage" placeholder = "Enter your message..." ></textarea>
-                <button type = "submit">Submit</button>
+            <form
+                id="contactForm"
+                method="post"
+                onSubmit={async (e) => {
+                    e.preventDefault();
+                    await createCommentSheet();
+                }}
+            >
+        <div className="commentBoard">
+            
+        </div>
+                <button type="submit">Submit</button>
             </form>
         </div>
         
@@ -133,8 +127,15 @@ const HelpBody: React.FC = () => {
             <p>Click this link to navigate to WheretoWaste's GitHub repository. There, you can find the source code and helpful guides about using WheretoWaste on your own applications.</p>
             <a href = "https://github.com/devwilkes/WheretoWaste"> WheretoWaste Source</a>
         </div>
+
+        <div>
+            {todos.map((todo) => (
+            <li key={todo}>{todo}</li>
+            ))}
+        </div>
         </>
     )
+    
 }
 
 export default HelpBody;
