@@ -7,9 +7,9 @@ import {
     Navigate,
   } from "react-router-dom";
 import Header from "./components/Header";
-import HomeBody from "./pages/HomeBody";
-import AboutBody from "./pages/AboutBody";
-import HelpBody from "./pages/HelpBody";
+import HomeBody from "./pages-frontend/HomeBody";
+import AboutBody from "./pages-frontend/AboutBody";
+import HelpBody from "./pages-frontend/HelpBody";
 import Footer from "./components/Footer";    
 
 // Define the App component that renders the Header, Routes, and Footer components
