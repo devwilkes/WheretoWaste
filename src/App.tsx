@@ -19,12 +19,13 @@ const App: React.FC = () => {
       <Router>
         <Header />
         <div style={{ flex: 1 }}>
-          <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<HomeBody />} />
-            <Route path="/about" element={<AboutBody />} />
-            <Route path="/help" element={<HelpBody />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomeBody />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/about" element={<AboutBody />} />
+          <Route path="/help" element={<HelpBody />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
         </div>
         <Footer />
       </Router>

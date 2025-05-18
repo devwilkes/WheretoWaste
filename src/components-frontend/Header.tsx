@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import './header.css';
+import './Header.css';
 
 
 function NavBar() {
@@ -11,25 +11,30 @@ function NavBar() {
       <div className='navbar-center'>
         <ul className='nav-links'>
           <li>
-            <NavLink to='/HomeBody'>Home</NavLink>
+            <NavLink to='/' end>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/AboutBody'>About</NavLink>
+            <NavLink to='/about'>
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/HelpBody'>Help</NavLink>
+            <NavLink to='/help'>
+              Help
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className='navbar-right'>
-        <a href='/account' className='user-icon'>
+        <NavLink to='/account' className='user-icon'>
           <i className='fas fa-user'></i>
-        </a>
+        </NavLink>
       </div>
     </nav>
   );
 }
-
 
 //Defining the Header component
 const Header: React.FC = () => {

@@ -1,6 +1,13 @@
-.center {
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
   display: flex;
-  justify-content: center;
+  background: #222d23;
+  justify-content: flex;
   align-items: center;
-  vertical-align: middle;
+  min-height: 100vh;
 }
