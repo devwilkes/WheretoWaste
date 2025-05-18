@@ -1,0 +1,10 @@
+.FAQ {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.FAQ hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
