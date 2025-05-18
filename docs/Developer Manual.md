@@ -4,8 +4,8 @@
 
 ### WheretoWaste Dependencies
 WheretoWaste uses the following dependencies, and will require them for installation:
-* Node .JS
-* React.JS + Vite
+* Node.JS
+* React + Vite
 * Vercel
 * Supabase
 
