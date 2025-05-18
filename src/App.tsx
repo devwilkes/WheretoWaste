@@ -10,7 +10,7 @@ import Header from "./components-frontend/Header";
 import HomeBody from "./pages-frontend/HomeBody";
 import AboutBody from "./pages-frontend/AboutBody";
 import HelpBody from "./pages-frontend/HelpBody";
-import Footer from "./components-frontend/Footer";    
+import Footer from "./components-frontend/Footer";   
 
 // Define the App component that renders the Header, Routes, and Footer components
 const App: React.FC = () => {
