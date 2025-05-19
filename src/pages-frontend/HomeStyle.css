@@ -12,9 +12,10 @@
   border: 1px solid rgb(0, 202, 61);
 }
 
-.container {
-  width: 30rem;
-  position: relative;
+.home-body {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
 }
 
 .searchForm {
@@ -40,13 +41,12 @@
 }
 
 .searchButton {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 3rem;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
   background-color: #35ff4d;
   border: none;
   color: white;
+  height: 2.5rem;
   cursor: pointer;
 }

@@ -107,17 +107,16 @@ const HelpBody: React.FC = () => {
         <div className = "contact">
             <h1>Got other questions? Contact me!</h1>
             <p>For any questions, comments, or concerns regarding WheretoWaste, please fill out the form below:</p>
-            <form
-                id="contactForm"
-                method="post"
-                onSubmit={async (e) => {
-                    e.preventDefault();
-                    await createCommentSheet();
-                }}
-            >
-        <div className="commentBoard">
-            
-        </div>
+            <form id="contactForm" method="post" onSubmit={async (e) => {
+                e.preventDefault();
+                await createCommentSheet();
+                }}>
+                <label htmlFor="userName">Name:</label>
+                <input type="text" id="userName" name="userName" required />
+                <label htmlFor="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" required />
+                <label htmlFor="userMessage">Message:</label>
+                <textarea id="userMessage" name="userMessage" required></textarea>
                 <button type="submit">Submit</button>
             </form>
         </div>

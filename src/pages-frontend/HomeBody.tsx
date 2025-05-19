@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import SearchBody from './SearchBody';
 import './HomeStyle.css';
+import { useNavigate } from 'react-router-dom';
 
 const HomeBody: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -10,26 +11,17 @@ const HomeBody: React.FC = () => {
         setSearchTerm(e.target.value);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        
-    };
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {e.preventDefault(); };
 
     return (
-        <div className= "container">
-            <form onSubmit={handleSubmit} className= "searchForm">
-                <input
-                    type="text"
-                    placeholder="Search for a trash item..."
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                    className= "textBox"
-                />
-                <button type="submit" className= "searchButton">
-                    Search for a Waste item...
-                </button>
+        <div className="home-body">
+            <form onSubmit={e => {e.preventDefault(); }} className="searchForm">
+            <label htmlFor="search" className="searchLabel"> What are you looking to get rid of? </label>
+            <input type="text" placeholder="Enter your waste item..." value={searchTerm} onChange={handleInputChange} className="textBox"/>
+            <button type="submit" className="searchButton">
+                Search for Waste Solutions!
+            </button>
             </form>
-            <SearchBody searchTerm={searchTerm} />
         </div>
     );
 };
