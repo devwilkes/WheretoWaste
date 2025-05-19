@@ -24,19 +24,8 @@ const HomeBody: React.FC = () => {
                 <label htmlFor="search" className="searchLabel">
                     What are you looking to get rid of?
                 </label>
-                <input
-                    type="text"
-                    placeholder="Enter your waste item..."
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                    className="textBox"
-                />
-                <button
-                    type="submit"
-                    className="searchButton"
-                >
-                    Search for Waste Solutions!
-                </button>
+                <input type="text"placeholder="Enter your waste item..." value={searchTerm} onChange={handleInputChange} className="textBox" required/>
+                <button type="submit"className="searchButton">Search for Waste Solutions!</button>
             </form>
         </div>
     );

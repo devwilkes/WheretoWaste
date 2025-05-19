@@ -33,9 +33,25 @@ function pullUpImage(searchItem: string){
         .catch(function(error){console.log(error);});
 }
 
+// Generates a list of "looking for" wanted posts from TrashNothing
+function generateWantedPosts(searchItem: string){
+    fetch('https://trashnothing.com/api/v1.4/posts/search)')
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach((data: { title: string; type: string; }) => {
+            if (data.title.includes(searchItem)) {
+                if (data.type == "wanted") {
+                    document.getElementById("wantedPosts")!.innerHTML += `<div class="post"><h3>${data.title}</h3><p>${data.type}</p></div>`;
+                }
+            }
+        });
+    });
+}
+
 const SearchBody: React.FC<SearchBodyProps> = ({ searchTerm }) => {
     useEffect(() => {
         pullUpImage(searchTerm);
+        generateWantedPosts(searchTerm);
     }, [searchTerm]);
 
     return (
@@ -43,6 +59,8 @@ const SearchBody: React.FC<SearchBodyProps> = ({ searchTerm }) => {
             <h1 id="SearchedItem">You're looking to dispose of: {searchTerm}</h1>
                 <img id = "searchImage"></img>
             <h2 id="searchResults">Here's what you can do:</h2>
+            <h3 id="searchResults">1. Check out these wanted posts from TrashNothing:</h3>
+            <div id="wantedPosts"></div>
         </div>
     );
 }
