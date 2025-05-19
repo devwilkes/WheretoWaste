@@ -12,6 +12,8 @@ Consumers may not be educated on how to properly dispose of these items or may n
 By educating and informing users of my website on how/where to dispose of otherwise difficult-to-dispose-of objects, they can alleviate the risk of fines/injury/junk accumulation via improper disposal by adopting acceptable and sustainable trash removal habits.
 
 # What is WheretoWaste's Target Audience(s)?
+Since trash disposal is a widely universal task, WheretoWaste's target audience is very broad. To narrow it down, WheretoWaste was built with having users who currently have issues regarding otherwise indisposable items in mind. They can hopefully turn to WheretoWaste as a handy resource to get their questions answered and their unwanted junk disposed of safely, sustainably, and efficiently.
+
 WheretoWaste is designed to be accessible by web browser users (Edge, Chrome, Firefox, etc.), but can also be accessible to mobile browser users on iOS devices. Later down the line, I do want to try implementing WheretoWaste as a mobile application using Swift.
 
 # WheretoWaste Developer Manual
