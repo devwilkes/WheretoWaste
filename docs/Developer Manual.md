@@ -22,9 +22,9 @@ Simply clone this repository into your own GitHub account, and hook it up to a n
 ## WheretoWaste Server APIs
 
 WheretoWaste is entirely built using three open-source APIs.
-* [IP Stack] (https://ipstack.com/)
-* [Wikipedia Commons] (https://commons.wikimedia.org/wiki/Commons:API)
-* [Trash Nothing] (Trash Nothing https://trashnothing.com/app/developer?_z=web-2025-05-15T18%3A14%3A34&_display_mode=browser)
+* [IP Stack](https://ipstack.com/)
+* [Wikipedia Commons](https://commons.wikimedia.org/wiki/Commons:API)
+* [Trash Nothing](Trash Nothing https://trashnothing.com/app/developer?_z=web-2025-05-15T18%3A14%3A34&_display_mode=browser)
 
 ## Known Bugs and Errors
 * Currently, the SupaBase database is not responding properly to fetch/get requests despite being established and connected in the backend.
