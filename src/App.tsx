@@ -13,7 +13,6 @@ import AboutBody from "./pages-frontend/AboutBody";
 import HelpBody from "./pages-frontend/HelpBody";
 import Footer from "./components-frontend/Footer";   
 
-
 // Define the App component that renders the Header, Routes, and Footer components
 const App: React.FC = () => {
   return (
