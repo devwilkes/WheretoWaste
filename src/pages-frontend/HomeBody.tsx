@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './HomeStyle.css';
 import { useNavigate } from 'react-router-dom';
 
+
 const HomeBody: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();

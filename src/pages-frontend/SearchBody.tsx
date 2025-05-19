@@ -6,6 +6,14 @@ interface SearchBodyProps {
     searchTerm: string;
 }
 
+async function ipLookup() {
+    return fetch('http://api.ipstack.com/?access_key=4e4a77d176849dca950e8d6773f15b58')
+        .then((response) => response.json())
+        .then((data: { ip: string }) => {
+            return data.ip;
+        });
+}
+
 //Pulls up an image of the searched item from Wikipedia's image resources
 function pullUpImage(searchItem: string){
  var url = "https://en.wikipedia.org/w/api.php"; 
@@ -34,22 +42,23 @@ function pullUpImage(searchItem: string){
 }
 
 // Generates a list of "looking for" wanted posts from TrashNothing
-function generateWantedPosts(searchItem: string){
-    fetch('https://trashnothing.com/api/v1.4/posts/search)')
-    .then((response) => response.json())
-    .then((data) => {
-        data.forEach((data: { title: string; type: string; }) => {
-            if (data.title.includes(searchItem)) {
-                if (data.type == "wanted") {
-                    document.getElementById("wantedPosts")!.innerHTML += `<div class="post"><h3>${data.title}</h3><p>${data.type}</p></div>`;
+async function generateWantedPosts(searchItem: string) {
+    fetch('https://trashnothing.com/api/v1.4/posts/search')
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach((data: { title: string; type: string; }) => {
+                if (data.title.includes(searchItem)) {
+                    if (data.type === "wanted") {
+                        document.getElementById("wantedPosts")!.innerHTML += `<div class="post"><h3>${data.title}</h3><p>${data.type}</p></div>`;
+                    }
                 }
-            }
+            });
         });
-    });
 }
 
 const SearchBody: React.FC<SearchBodyProps> = ({ searchTerm }) => {
     useEffect(() => {
+        ipLookup();
         pullUpImage(searchTerm);
         generateWantedPosts(searchTerm);
     }, [searchTerm]);
