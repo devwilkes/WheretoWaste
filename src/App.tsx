@@ -8,6 +8,7 @@ import {
   } from "react-router-dom";
 import Header from "./components-frontend/Header";
 import HomeBody from "./pages-frontend/HomeBody";
+import SearchBody from "./pages-frontend/SearchBody";
 import AboutBody from "./pages-frontend/AboutBody";
 import HelpBody from "./pages-frontend/HelpBody";
 import Footer from "./components-frontend/Footer";   
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomeBody />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/search" element={<SearchBody searchTerm={""} />} />
           <Route path="/about" element={<AboutBody />} />
           <Route path="/help" element={<HelpBody />} />
           <Route path="*" element={<Navigate to="/" replace />} />
